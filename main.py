@@ -63,10 +63,10 @@ def load_model(model_path, class_names, device):
         raise
 
 try:
-    with open('../ModelTraining/car_model_classes.json', 'r') as f:
+    with open('./car_model_classes.json', 'r') as f:
         class_names = json.load(f)
     logging.info(f"Loaded class names: {class_names}")
-    classifier_model = load_model("../ModelTraining/checkpoints_20250725_183712/best_model.pth", class_names, device)
+    classifier_model = load_model("./checkpoints_20250725_183712/best_model.pth", class_names, device)
 except Exception as e:
     logging.error(f"Failed to load classifier or class names: {str(e)}")
     classifier_model = None

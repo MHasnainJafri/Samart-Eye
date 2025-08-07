@@ -259,7 +259,7 @@ class CarModelClassifier:
 
 def main():
     config = {
-        'data_dir': "/mnt/d/FinalYear/processed_dataset/finalize_data",
+        'data_dir': "/mnt/d/Samart Eye/processed_dataset/finalize_data",
         'model_name': 'resnet50',
         'batch_size': 8,
         'num_epochs': 200,
@@ -270,7 +270,7 @@ def main():
     classifier.setup_data_loaders()
     classifier.setup_model()
     classifier.train()
-    classifier.test()  # <-- Run test after training
+    classifier.test() 
 
 
 if __name__ == "__main__":
