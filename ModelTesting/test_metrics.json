@@ -1,0 +1,640 @@
+{
+  "global_stats": {
+    "total_images": 5207,
+    "total_correct": 5207,
+    "accuracy": 1.0,
+    "confidence_bins": {
+      "90-100": 1971,
+      "80-90": 3016,
+      "70-80": 208,
+      "60-70": 8,
+      "50-60": 3,
+      "0-50": 1
+    },
+    "class_distribution": {
+      "vehicle_carlamotors_carlacola": 165,
+      "vehicle_dodge_charger_police": 252,
+      "vehicle_ford_crown": 143,
+      "vehicle_ford_mustang": 350,
+      "vehicle_harley-davidson_low_rider": 330,
+      "vehicle_jeep_wrangler_rubicon": 380,
+      "vehicle_kawasaki_ninja": 311,
+      "vehicle_lincoln_mkz_2020": 168,
+      "vehicle_mercedes_coupe_2020": 708,
+      "vehicle_micro_microlino": 421,
+      "vehicle_nissan_micra": 1017,
+      "vehicle_nissan_patrol": 512,
+      "vehicle_tesla_cybertruck": 96,
+      "vehicle_volkswagen_t2": 354
+    },
+    "confusion_matrix": [
+      [
+        165.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        252.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        143.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        350.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        330.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        380.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        311.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        168.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        708.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        421.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1017.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        512.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        96.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        354.0
+      ]
+    ]
+  },
+  "class_stats": {
+    "vehicle_carlamotors_carlacola": {
+      "total": 165,
+      "correct": 165,
+      "confidence_sum": 142.89131832122803,
+      "confidence_bins": {
+        "90-100": 25,
+        "80-90": 130,
+        "70-80": 10,
+        "60-70": 0,
+        "50-60": 0,
+        "0-50": 0
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_carlamotors_carlacola_255_68_0_0000_noisy.png",
+          "vehicle_carlamotors_carlacola_255_68_0_0001_noisy.png",
+          "vehicle_carlamotors_carlacola_255_68_0_0001_saturation.png",
+          "vehicle_carlamotors_carlacola_255_68_0_0002_saturation.png",
+          "vehicle_carlamotors_carlacola_255_68_0_0004_flip.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.8660079898256244
+    },
+    "vehicle_dodge_charger_police": {
+      "total": 252,
+      "correct": 252,
+      "confidence_sum": 225.90892732143402,
+      "confidence_bins": {
+        "90-100": 110,
+        "80-90": 142,
+        "70-80": 0,
+        "60-70": 0,
+        "50-60": 0,
+        "0-50": 0
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_dodge_charger_police_0_0_0_0000_noisy.png",
+          "vehicle_dodge_charger_police_0_0_0_0000_original.png",
+          "vehicle_dodge_charger_police_0_0_0_0001_noisy.png",
+          "vehicle_dodge_charger_police_0_0_0_0002_brightness.png",
+          "vehicle_dodge_charger_police_0_0_0_0002_contrast.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.8964639973072779
+    },
+    "vehicle_ford_crown": {
+      "total": 143,
+      "correct": 143,
+      "confidence_sum": 127.31457132101059,
+      "confidence_bins": {
+        "90-100": 65,
+        "80-90": 71,
+        "70-80": 7,
+        "60-70": 0,
+        "50-60": 0,
+        "0-50": 0
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_ford_crown_255_185_0_0000_saturation.png",
+          "vehicle_ford_crown_255_185_0_0001_noisy.png",
+          "vehicle_ford_crown_255_185_0_0002_contrast.png",
+          "vehicle_ford_crown_255_185_0_0002_saturation.png",
+          "vehicle_ford_crown_255_185_0_0006_hue.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.8903116875595146
+    },
+    "vehicle_ford_mustang": {
+      "total": 350,
+      "correct": 350,
+      "confidence_sum": 315.44399428367615,
+      "confidence_bins": {
+        "90-100": 205,
+        "80-90": 132,
+        "70-80": 13,
+        "60-70": 0,
+        "50-60": 0,
+        "0-50": 0
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_ford_mustang_0_0_0_0001_original.png",
+          "vehicle_ford_mustang_0_0_0_0005_saturation.png",
+          "vehicle_ford_mustang_0_0_0_0006_contrast.png",
+          "vehicle_ford_mustang_0_0_0_0006_hue.png",
+          "vehicle_ford_mustang_0_0_0_0008_original.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.9012685550962176
+    },
+    "vehicle_harley-davidson_low_rider": {
+      "total": 330,
+      "correct": 330,
+      "confidence_sum": 297.3142319917679,
+      "confidence_bins": {
+        "90-100": 186,
+        "80-90": 142,
+        "70-80": 2,
+        "60-70": 0,
+        "50-60": 0,
+        "0-50": 0
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_harley-davidson_low_rider_0_38_132_0000_contrast.png",
+          "vehicle_harley-davidson_low_rider_0_38_132_0000_equalized.png",
+          "vehicle_harley-davidson_low_rider_0_38_132_0000_hue.png",
+          "vehicle_harley-davidson_low_rider_0_38_132_0002_brightness.png",
+          "vehicle_harley-davidson_low_rider_0_38_132_0002_flip.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.9009522181568723
+    },
+    "vehicle_jeep_wrangler_rubicon": {
+      "total": 380,
+      "correct": 380,
+      "confidence_sum": 346.91690611839294,
+      "confidence_bins": {
+        "90-100": 276,
+        "80-90": 94,
+        "70-80": 6,
+        "60-70": 2,
+        "50-60": 2,
+        "0-50": 0
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_jeep_wrangler_rubicon_0_39_105_0000_contrast.png",
+          "vehicle_jeep_wrangler_rubicon_0_39_105_0000_hue.png",
+          "vehicle_jeep_wrangler_rubicon_0_39_105_0000_original.png",
+          "vehicle_jeep_wrangler_rubicon_0_39_105_0001_noisy.png",
+          "vehicle_jeep_wrangler_rubicon_0_39_105_0002_original.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.9129392266273498
+    },
+    "vehicle_kawasaki_ninja": {
+      "total": 311,
+      "correct": 311,
+      "confidence_sum": 269.28602451086044,
+      "confidence_bins": {
+        "90-100": 56,
+        "80-90": 240,
+        "70-80": 15,
+        "60-70": 0,
+        "50-60": 0,
+        "0-50": 0
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_kawasaki_ninja_0_0_0_0000_equalized.png",
+          "vehicle_kawasaki_ninja_0_0_0_0000_hue.png",
+          "vehicle_kawasaki_ninja_0_0_0_0001_contrast.png",
+          "vehicle_kawasaki_ninja_0_0_0_0001_flip.png",
+          "vehicle_kawasaki_ninja_0_0_0_0001_hue.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.865871461449712
+    },
+    "vehicle_lincoln_mkz_2020": {
+      "total": 168,
+      "correct": 168,
+      "confidence_sum": 154.61734288930893,
+      "confidence_bins": {
+        "90-100": 132,
+        "80-90": 25,
+        "70-80": 8,
+        "60-70": 3,
+        "50-60": 0,
+        "0-50": 0
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_lincoln_mkz_2020_0_0_0_0000_noisy.png",
+          "vehicle_lincoln_mkz_2020_0_0_0_0000_original.png",
+          "vehicle_lincoln_mkz_2020_0_0_0_0001_brightness.png",
+          "vehicle_lincoln_mkz_2020_0_0_0_0001_hue.png",
+          "vehicle_lincoln_mkz_2020_0_0_0_0005_brightness.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.9203413267220769
+    },
+    "vehicle_mercedes_coupe_2020": {
+      "total": 708,
+      "correct": 708,
+      "confidence_sum": 598.1247800290585,
+      "confidence_bins": {
+        "90-100": 79,
+        "80-90": 513,
+        "70-80": 112,
+        "60-70": 2,
+        "50-60": 1,
+        "0-50": 1
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_mercedes_coupe_2020_0_0_0_0000_original.png",
+          "vehicle_mercedes_coupe_2020_0_0_0_0001_hue.png",
+          "vehicle_mercedes_coupe_2020_0_0_0_0002_equalized.png",
+          "vehicle_mercedes_coupe_2020_0_0_0_0004_brightness.png",
+          "vehicle_mercedes_coupe_2020_0_0_0_0004_hue.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.844809011340478
+    },
+    "vehicle_micro_microlino": {
+      "total": 421,
+      "correct": 421,
+      "confidence_sum": 378.7893600463867,
+      "confidence_bins": {
+        "90-100": 211,
+        "80-90": 210,
+        "70-80": 0,
+        "60-70": 0,
+        "50-60": 0,
+        "0-50": 0
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_micro_microlino_145_255_181_0001_contrast.png",
+          "vehicle_micro_microlino_145_255_181_0002_hue.png",
+          "vehicle_micro_microlino_145_255_181_0002_noisy.png",
+          "vehicle_micro_microlino_145_255_181_0003_flip.png",
+          "vehicle_micro_microlino_145_255_181_0003_saturation.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.8997371972598259
+    },
+    "vehicle_nissan_micra": {
+      "total": 1017,
+      "correct": 1017,
+      "confidence_sum": 912.6651508808136,
+      "confidence_bins": {
+        "90-100": 501,
+        "80-90": 508,
+        "70-80": 8,
+        "60-70": 0,
+        "50-60": 0,
+        "0-50": 0
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_nissan_micra_0_0_0_0001_contrast.png",
+          "vehicle_nissan_micra_0_0_0_0001_hue.png",
+          "vehicle_nissan_micra_0_0_0_0001_original.png",
+          "vehicle_nissan_micra_0_0_0_0001_saturation.png",
+          "vehicle_nissan_micra_0_0_0_0002_equalized.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.8974091945730713
+    },
+    "vehicle_nissan_patrol": {
+      "total": 512,
+      "correct": 512,
+      "confidence_sum": 444.9941394329071,
+      "confidence_bins": {
+        "90-100": 63,
+        "80-90": 442,
+        "70-80": 7,
+        "60-70": 0,
+        "50-60": 0,
+        "0-50": 0
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_nissan_patrol_0_0_0_0000_brightness.png",
+          "vehicle_nissan_patrol_0_0_0_0000_flip.png",
+          "vehicle_nissan_patrol_0_0_0_0001_brightness.png",
+          "vehicle_nissan_patrol_0_0_0_0001_equalized.png",
+          "vehicle_nissan_patrol_0_0_0_0002_brightness.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.8691291785798967
+    },
+    "vehicle_tesla_cybertruck": {
+      "total": 96,
+      "correct": 96,
+      "confidence_sum": 86.45106363296509,
+      "confidence_bins": {
+        "90-100": 54,
+        "80-90": 41,
+        "70-80": 1,
+        "60-70": 0,
+        "50-60": 0,
+        "0-50": 0
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_tesla_cybertruck_default_0002_equalized.png",
+          "vehicle_tesla_cybertruck_default_0002_saturation.png",
+          "vehicle_tesla_cybertruck_default_0003_contrast.png",
+          "vehicle_tesla_cybertruck_default_0003_flip.png",
+          "vehicle_tesla_cybertruck_default_0003_hue.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.9005319128433863
+    },
+    "vehicle_volkswagen_t2": {
+      "total": 354,
+      "correct": 354,
+      "confidence_sum": 300.8562082648277,
+      "confidence_bins": {
+        "90-100": 8,
+        "80-90": 326,
+        "70-80": 19,
+        "60-70": 1,
+        "50-60": 0,
+        "0-50": 0
+      },
+      "wrong_predictions": {},
+      "sample_images": {
+        "correct": [
+          "vehicle_volkswagen_t2_0_33_5_0000_hue.png",
+          "vehicle_volkswagen_t2_0_33_5_0001_hue.png",
+          "vehicle_volkswagen_t2_0_33_5_0002_equalized.png",
+          "vehicle_volkswagen_t2_0_33_5_0002_flip.png",
+          "vehicle_volkswagen_t2_0_33_5_0002_saturation.png"
+        ],
+        "incorrect": []
+      },
+      "accuracy": 1.0,
+      "avg_confidence": 0.8498762945334116
+    }
+  },
+  "class_names": [
+    "vehicle_carlamotors_carlacola",
+    "vehicle_dodge_charger_police",
+    "vehicle_ford_crown",
+    "vehicle_ford_mustang",
+    "vehicle_harley-davidson_low_rider",
+    "vehicle_jeep_wrangler_rubicon",
+    "vehicle_kawasaki_ninja",
+    "vehicle_lincoln_mkz_2020",
+    "vehicle_mercedes_coupe_2020",
+    "vehicle_micro_microlino",
+    "vehicle_nissan_micra",
+    "vehicle_nissan_patrol",
+    "vehicle_tesla_cybertruck",
+    "vehicle_volkswagen_t2"
+  ],
+  "sample_images_dir": "test_samples"
+}
