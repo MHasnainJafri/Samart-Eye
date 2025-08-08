@@ -14,6 +14,14 @@ from ultralytics import YOLO
 import torch
 from torchvision import models, transforms
 from PIL import Image
+import argparse
+import uuid
+import cv2
+from datetime import datetime
+parser = argparse.ArgumentParser(description='Detect a car from command line')
+parser.add_argument('--car_to_detect', type=str, help='Car model to detect')
+args = parser.parse_args()
+car_to_detect = args.car_to_detect   
 
 # Setup logging
 logging.basicConfig(level=logging.DEBUG, filename='carla_app.log', format='%(asctime)s - %(levelname)s - %(message)s')
@@ -112,19 +120,19 @@ DETECTION_THRESHOLD = 0.5
 MIN_ROI_SIZE = 10
 
 # Spawn vehicles in CARLA
-def spawn_vehicles(world, num_vehicles=10):
-    blueprint_library = world.get_blueprint_library()
-    vehicle_bps = blueprint_library.filter('vehicle.*')
-    # Ensure at least one vehicle_volkswagen_t2 is spawned
-    t2_bp = next((bp for bp in vehicle_bps if 'vehicle.vehicle_dodge_charger_police' in bp.id), vehicle_bps[0])
-    spawn_points = world.get_map().get_spawn_points()
-    for i in range(min(num_vehicles, len(spawn_points))):
-        bp = t2_bp if i == 0 else vehicle_bps[i % len(vehicle_bps)]
-        try:
-            world.spawn_actor(bp, spawn_points[i])
-            logging.info(f"Spawned vehicle {i+1}: {bp.id}")
-        except Exception as e:
-            logging.error(f"Failed to spawn vehicle {i+1}: {str(e)}")
+# def spawn_vehicles(world, num_vehicles=10):
+#     blueprint_library = world.get_blueprint_library()
+#     vehicle_bps = blueprint_library.filter('vehicle.*')
+#     # Ensure at least one vehicle_volkswagen_t2 is spawned
+#     t2_bp = next((bp for bp in vehicle_bps if 'vehicle.vehicle_dodge_charger_police' in bp.id), vehicle_bps[0])
+#     spawn_points = world.get_map().get_spawn_points()
+#     for i in range(min(num_vehicles, len(spawn_points))):
+#         bp = t2_bp if i == 0 else vehicle_bps[i % len(vehicle_bps)]
+#         try:
+#             world.spawn_actor(bp, spawn_points[i])
+#             logging.info(f"Spawned vehicle {i+1}: {bp.id}")
+#         except Exception as e:
+#             logging.error(f"Failed to spawn vehicle {i+1}: {str(e)}")
 
 def save_rois(street_renders, filename='camera_rois.json'):
     try:
@@ -205,6 +213,54 @@ class CameraRenderObject:
             logging.debug(f"Frame processed for {self.label}, time: {(time.time() - start_time)*1000:.2f} ms")
         except Exception as e:
             logging.error(f"Error updating camera frame for {self.label}: {str(e)}")
+            
+    def saveData(self, crop, pred_class, pred_prob):
+        # Generate unique filename for the image
+        image_dir = 'detection/vehicle_images'
+        os.makedirs(image_dir, exist_ok=True)
+        image_filename = f"{uuid.uuid4()}.jpg"
+        image_path = os.path.join(image_dir, image_filename)
+        
+        # Save the cropped image
+        cv2.imwrite(image_path, crop)
+        
+        # Define JSON file path
+        json_file = 'detection/vehicle_detections.json'
+        
+        # Load existing data if file exists, otherwise initialize empty list
+        if os.path.exists(json_file):
+            with open(json_file, 'r') as f:
+                try:
+                    data = json.load(f)
+                    if not isinstance(data, list):
+                        data = [data]
+                except json.JSONDecodeError:
+                    data = []
+        else:
+            data = []
+        
+        # Check if the last entry has the same camera label
+        if data and data[-1]['camera_label'] == self.label:
+            # Append image path to the last entry's crop_image list
+            data[-1]['crop_image'].append({"image_src":image_path,"probability":float(pred_prob)})
+            if( data[-1]['probability']<float(pred_prob)):
+            # Update probability and timestamp if needed
+                data[-1]['probability'] = float(pred_prob)
+            data[-1]['timestamp'] = datetime.now().isoformat()
+        else:
+            # Create new entry
+            detection_data = {
+                'camera_label': self.label,
+                'predicted_class': pred_class,
+                'probability': float(pred_prob),
+                'timestamp': datetime.now().isoformat(),
+                'crop_image': [{"image_src":image_path,"probability":float(pred_prob)}]
+            }
+            data.append(detection_data)
+    
+        # Write updated data to JSON file
+        with open(json_file, 'w') as f:
+            json.dump(data, f, indent=4)
 
     def detect_vehicles(self, results, idx):
         if self.last_frame is None or yolo_model is None or classifier_model is None:
@@ -262,8 +318,9 @@ class CameraRenderObject:
                         self.vehicle_boxes.append((int(x1 * scale_x), int(y1 * scale_y), int((x2 - x1) * scale_x), int((y2 - y1) * scale_y)))
                         if pred_prob > DETECTION_THRESHOLD:
                             self.vehicle_labels.append(f"{pred_class} ({pred_prob:.2f})")
-                        if pred_class == "vehicle_dodge_charger_police" and pred_prob > DETECTION_THRESHOLD:
+                        if pred_class == car_to_detect and pred_prob > DETECTION_THRESHOLD:
                             self.t2_detected = True
+                            self.saveData(self.last_frame,pred_class,pred_prob)
                         logging.debug(f"Detection for {self.label}: Class={pred_class}, Conf={pred_prob:.2f}, Box=({x1}, {y1}, {x2}, {y2})")
             self.detection_fps_queue.append(1/(time.time() - start_time + 1e-6))
             logging.info(f"Detected {len(self.vehicle_boxes)} vehicles for {self.label}, T2 detected: {self.t2_detected}")
@@ -280,7 +337,7 @@ def setup_cameras():
         logging.error(f"No camera positions found: {str(e)}")
         return [], []
 
-    spawn_vehicles(world, num_vehicles=10)
+    # spawn_vehicles(world, num_vehicles=10)
 
     street_cameras = []
     street_renders = []
@@ -301,7 +358,7 @@ def setup_cameras():
             carla.Location(x=loc["x"], y=loc["y"], z=loc["z"]),
             carla.Rotation(pitch=rot["pitch"], yaw=rot["yaw"], roll=rot["roll"])
         )
-        render = CameraRenderObject(cell_width, cell_height, f"Cam {i+1}")
+        render = CameraRenderObject(cell_width, cell_height, cam_info['label'])
         street_renders.append(render)
         try:
             camera = world.spawn_actor(camera_bp, transform)
