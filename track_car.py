@@ -27,7 +27,7 @@ CAR_MODELS = [
 ]
 
 def main(page: ft.Page):
-    page.title = "Car Detection Analytics"
+    page.title = "Smart Eye"
     page.vertical_alignment = ft.MainAxisAlignment.START
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.window_width = 1200
