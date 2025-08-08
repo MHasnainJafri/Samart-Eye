@@ -1,0 +1,126 @@
+[
+    {
+        "camera_label": "cam_5",
+        "predicted_class": "vehicle_ford_crown",
+        "probability": 0.7860474586486816,
+        "timestamp": "2025-08-08T17:32:30.911124",
+        "crop_image": [
+            {
+                "image_src": "detection/vehicle_images\\f855112b-9928-466a-a3c0-291a332a961f.jpg",
+                "probability": 0.745000422000885
+            },
+            {
+                "image_src": "detection/vehicle_images\\1ea99e21-95a0-4947-8fcf-9589d8885fdb.jpg",
+                "probability": 0.7383915781974792
+            },
+            {
+                "image_src": "detection/vehicle_images\\53374397-db4f-4c79-991f-bbf5d8e3b3d0.jpg",
+                "probability": 0.6897940635681152
+            },
+            {
+                "image_src": "detection/vehicle_images\\684a3e87-d00a-43ae-977f-73294db8e028.jpg",
+                "probability": 0.7439658045768738
+            },
+            {
+                "image_src": "detection/vehicle_images\\def65336-ff92-4669-b9e2-24eb2d79621f.jpg",
+                "probability": 0.6968563199043274
+            },
+            {
+                "image_src": "detection/vehicle_images\\2c8a73c8-acd8-4581-b5df-4c7114a9e0d1.jpg",
+                "probability": 0.7297878861427307
+            },
+            {
+                "image_src": "detection/vehicle_images\\859c689f-e75d-4ace-9ea2-a3319ece96d2.jpg",
+                "probability": 0.7860474586486816
+            },
+            {
+                "image_src": "detection/vehicle_images\\010a4f1b-bdfc-40b5-871d-23bad21f95b0.jpg",
+                "probability": 0.7303782105445862
+            },
+            {
+                "image_src": "detection/vehicle_images\\ad789999-ec84-49cb-8bd8-d2752256e0fa.jpg",
+                "probability": 0.7257780432701111
+            }
+        ]
+    },
+    {
+        "camera_label": "cam_4",
+        "predicted_class": "vehicle_ford_crown",
+        "probability": 0.8896311521530151,
+        "timestamp": "2025-08-08T17:32:37.609844",
+        "crop_image": [
+            {
+                "image_src": "detection/vehicle_images\\fb9c9f2b-63f6-45cd-965e-c3506e0726d3.jpg",
+                "probability": 0.8634442687034607
+            },
+            {
+                "image_src": "detection/vehicle_images\\55c14ff3-7177-43d9-8928-1f3edfe31c85.jpg",
+                "probability": 0.7571209669113159
+            },
+            {
+                "image_src": "detection/vehicle_images\\d05dfa0e-d7c4-4023-a268-e83b6c658ab5.jpg",
+                "probability": 0.8193956613540649
+            },
+            {
+                "image_src": "detection/vehicle_images\\c039d595-58fa-4b6e-93b7-94b82cafae96.jpg",
+                "probability": 0.8896311521530151
+            }
+        ]
+    },
+    {
+        "camera_label": "cam_6",
+        "predicted_class": "vehicle_ford_crown",
+        "probability": 0.887653112411499,
+        "timestamp": "2025-08-08T17:32:45.719943",
+        "crop_image": [
+            {
+                "image_src": "detection/vehicle_images\\e0568461-3948-4260-9bf0-a72d8cfbcff2.jpg",
+                "probability": 0.7250581979751587
+            },
+            {
+                "image_src": "detection/vehicle_images\\2abab0bf-fe5c-46dd-be5f-e1849b76af30.jpg",
+                "probability": 0.7446624040603638
+            },
+            {
+                "image_src": "detection/vehicle_images\\c7ef2d0b-80ee-4a5e-98a1-d4a07205c983.jpg",
+                "probability": 0.887653112411499
+            },
+            {
+                "image_src": "detection/vehicle_images\\92151bd2-846c-4f6d-8e85-399b7a219067.jpg",
+                "probability": 0.824611485004425
+            }
+        ]
+    },
+    {
+        "camera_label": "cam_4",
+        "predicted_class": "vehicle_ford_crown",
+        "probability": 0.8568800687789917,
+        "timestamp": "2025-08-08T17:32:53.557284",
+        "crop_image": [
+            {
+                "image_src": "detection/vehicle_images\\2a0c1e90-0f17-43cb-a900-685ca177ffda.jpg",
+                "probability": 0.7946121096611023
+            },
+            {
+                "image_src": "detection/vehicle_images\\ae6cb059-f117-4cf9-bb22-eb2078b580cf.jpg",
+                "probability": 0.8568800687789917
+            }
+        ]
+    },
+    {
+        "camera_label": "cam_6",
+        "predicted_class": "vehicle_ford_crown",
+        "probability": 0.8549990057945251,
+        "timestamp": "2025-08-08T17:32:58.937991",
+        "crop_image": [
+            {
+                "image_src": "detection/vehicle_images\\522d4feb-592a-467d-9c50-b7c21e2b1edd.jpg",
+                "probability": 0.8549990057945251
+            },
+            {
+                "image_src": "detection/vehicle_images\\f7bcf421-d8d2-4b57-91ff-a90f502bd4b7.jpg",
+                "probability": 0.8164194822311401
+            }
+        ]
+    }
+]
